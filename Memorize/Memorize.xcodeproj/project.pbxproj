@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A388D2C265A21A1008ABBC5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A388D2B265A21A1008ABBC5 /* CardView.swift */; };
+		7A388D2D265A21A1008ABBC5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A388D2B265A21A1008ABBC5 /* CardView.swift */; };
 		7A52DB8E265352250031A4CF /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB7B265352240031A4CF /* MemorizeApp.swift */; };
 		7A52DB8F265352250031A4CF /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB7B265352240031A4CF /* MemorizeApp.swift */; };
 		7A52DB90265352250031A4CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A52DB7C265352240031A4CF /* ContentView.swift */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A388D2B265A21A1008ABBC5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7A52DB7B265352240031A4CF /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		7A52DB7C265352240031A4CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A52DB7D265352250031A4CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			children = (
 				7A52DB7B265352240031A4CF /* MemorizeApp.swift */,
 				7A52DB7C265352240031A4CF /* ContentView.swift */,
+				7A388D2B265A21A1008ABBC5 /* CardView.swift */,
 				7A52DB7D265352250031A4CF /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -188,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A52DB90265352250031A4CF /* ContentView.swift in Sources */,
+				7A388D2C265A21A1008ABBC5 /* CardView.swift in Sources */,
 				7A52DB8E265352250031A4CF /* MemorizeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A52DB91265352250031A4CF /* ContentView.swift in Sources */,
+				7A388D2D265A21A1008ABBC5 /* CardView.swift in Sources */,
 				7A52DB8F265352250031A4CF /* MemorizeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
