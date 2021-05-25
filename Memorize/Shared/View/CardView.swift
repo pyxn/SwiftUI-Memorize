@@ -9,32 +9,23 @@ import SwiftUI
 
 struct CardView: View {
     
-    var content: String
-    @State var isFaceUp: Bool = true
+    let card: MemorizeModel<String>.Card
     
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 13)
-            if isFaceUp {
+            if card.isFaceUp {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 2).foregroundColor(.blue)
-                Text(content)
+                Text(card.content)
                     .font(.largeTitle)
                     .foregroundColor(.blue)
+            } else if card.isMatched {
+                shape.opacity(0)
             } else {
                 shape.fill().foregroundColor(.blue)
             }
         }
         .aspectRatio(1/1.618, contentMode: .fit)
-        .onTapGesture {
-            isFaceUp = !isFaceUp
-        }
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(content: "🌏")
-        CardView(content: "🌏")
     }
 }

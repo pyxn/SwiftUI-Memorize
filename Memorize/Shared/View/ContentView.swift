@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var emojis: [String] = ["🌏", "⚡️", "🌴", "💫"]
-    @State var emojiCount: Int = 4
+    @ObservedObject var viewModel: MemorizeViewModelEmoji
     
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 55))]) {
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
-                        CardView(content: emoji)
+                    ForEach(viewModel.cards) { card in
+                        CardView(card: card)
+                            .onTapGesture { viewModel.choose(card) }
                     }
                 }
             }
@@ -28,10 +28,13 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
+    static let game = MemorizeViewModelEmoji()
+    
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: game)
             .preferredColorScheme(.light)
-        ContentView()
+        ContentView(viewModel: game)
             .preferredColorScheme(.dark)
     }
 }
