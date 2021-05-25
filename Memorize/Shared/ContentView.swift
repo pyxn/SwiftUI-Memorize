@@ -22,36 +22,8 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            HStack {
-                view_cardRemove
-                Spacer()
-                view_cardAdd
-            }
-            .font(.largeTitle)
         }
         .padding()
-    }
-    
-    private var view_cardRemove: some View {
-        Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        } label: {
-            Image(systemName: "minus.circle")
-                .padding()
-        }
-    }
-    
-    private var view_cardAdd: some View {
-        Button {
-            if emojiCount < 4 {
-                emojiCount += 1
-            }
-        } label: {
-            Image(systemName: "plus.circle")
-                .padding()
-        }
     }
 }
 
