@@ -9,15 +9,22 @@ import Foundation
 
 struct MemorizeModel<CardContent> where CardContent: Equatable {
     
+    // A Card is a custom data type that can represent a
+    // card object with a face up and face down state.
+    // They are created in pairs.
     struct Card: Identifiable {
-        var id: Int
+        let id: Int
         var isFaceUp: Bool = false
         var isMatched: Bool = false
-        var content: CardContent
+        let content: CardContent
     }
     
     private(set) var cards: Array<MemorizeModel.Card>
-    private      var indexOfLoneFaceUpCard: Int?
+    
+    private var indexOfLoneFaceUpCard: Int? {
+        get { cards.indices.filter({ index in cards[index].isFaceUp }).loneItem }
+        set { cards.indices.forEach({ index in cards[index].isFaceUp = (index == newValue) }) }
+    }
     
     init(numberOfCardPairs: Int, createCardContent: (Int) -> CardContent) {
         cards = Array<Card>()
@@ -40,7 +47,6 @@ struct MemorizeModel<CardContent> where CardContent: Equatable {
            !cards[chosenIndex].isFaceUp,
            !cards[chosenIndex].isMatched
         {
-            
             // Trigger only when:
             // - another card has already been tracked,
             //   this means two cards have now been selected.
@@ -55,24 +61,15 @@ struct MemorizeModel<CardContent> where CardContent: Equatable {
                     cards[potentialMatchIndex].isMatched = true
                 }
                 
-                // Clear card tracking after selecting two cards
-                indexOfLoneFaceUpCard = nil
+                // Flip the selected card face up
+                cards[chosenIndex].isFaceUp = true
                 
                 // Trigger only when:
                 // - there are no cards being tracked
             } else {
-                
-                // Turn all cards face down
-                for index in cards.indices {
-                    cards[index].isFaceUp = false
-                }
-                
                 // Track the selected card
                 indexOfLoneFaceUpCard = chosenIndex
             }
-            
-            // Flip the selected card face up
-            cards[chosenIndex].isFaceUp.toggle()
         }
     }
 }
