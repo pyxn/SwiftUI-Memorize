@@ -20,23 +20,34 @@ struct CardView: View {
     
     var body: some View {
             ZStack {
-                let shape = RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                if card.isFaceUp {
-                    // Get ready to put a @ViewBuilder func here!
-                    shape.fill().foregroundColor(.white)
-                    shape.strokeBorder(lineWidth: Constants.strokeWidth).foregroundColor(.blue)
-                    Text(card.content)
-                        .font(.largeTitle)
-                        .foregroundColor(.blue)
-                } else if card.isMatched {
-                    // Get ready to put a @ViewBuilder func here!
-                    shape.opacity(Constants.opacity)
-                } else {
-                    // Get ready to put a @ViewBuilder func here!
-                    shape.fill().foregroundColor(.blue)
-                }
+                if      card.isFaceUp  { showCardFaceUp()   }
+                else if card.isMatched { hideCard()         }
+                else                   { showCardFaceDown() }
             }
             .aspectRatio(Constants.aspectRatio, contentMode: .fit)
+    }
+    
+    @ViewBuilder private func showCardFaceUp() -> some View {
+        let shape = RoundedRectangle(cornerRadius: Constants.cornerRadius)
+        shape.fill().foregroundColor(.white)
+        shape.strokeBorder(lineWidth: Constants.strokeWidth).foregroundColor(.blue)
+        PieView(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: 110 - 90))
+            .foregroundColor(.blue)
+            .padding(5)
+            .opacity(0.34)
+        Text(card.content)
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+    }
+    
+    @ViewBuilder private func showCardFaceDown() -> some View {
+        let shape = RoundedRectangle(cornerRadius: Constants.cornerRadius)
+        shape.fill().foregroundColor(.blue)
+    }
+    
+    @ViewBuilder private func hideCard() -> some View {
+        let shape = RoundedRectangle(cornerRadius: Constants.cornerRadius)
+        shape.opacity(Constants.opacity)
     }
     
     init(_ card: MemorizeViewModelEmoji.Card) {

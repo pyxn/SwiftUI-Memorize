@@ -12,29 +12,42 @@ struct MemorizeGameView: View {
     @ObservedObject var viewModel: MemorizeViewModelEmoji
     
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 89))]) {
-                    ForEach(viewModel.cards) { card in
-                        CardView(card)
-                            .onTapGesture { viewModel.choose(card) }
+        
+        ScrollView {
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 55))]) {
+                        ForEach(viewModel.cards) { card in
+                            cardView(for: card)
+                        }
                     }
                 }
+                Spacer()
             }
-            Spacer()
         }
         .padding()
+    }
+    
+    @ViewBuilder private func cardView(for card: MemorizeViewModelEmoji.Card) -> some View {
+        if card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(0)
+        } else {
+            CardView(card)
+                .onTapGesture { viewModel.choose(card) }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     
-    static let game = MemorizeViewModelEmoji()
     
     static var previews: some View {
-        MemorizeGameView(viewModel: game)
+        
+        let game = MemorizeViewModelEmoji()
+        game.choose(game.cards.first!)
+        return MemorizeGameView(viewModel: game)
             .preferredColorScheme(.light)
-        MemorizeGameView(viewModel: game)
-            .preferredColorScheme(.dark)
+//        MemorizeGameView(viewModel: game)
+//            .preferredColorScheme(.dark)
     }
 }
