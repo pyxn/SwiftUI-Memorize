@@ -19,6 +19,8 @@
 		7A68C3AE265C6C11000B4071 /* MemorizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68C3AC265C6C11000B4071 /* MemorizeModel.swift */; };
 		7A68C3B0265C6E34000B4071 /* MemorizeViewModelEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68C3AF265C6E34000B4071 /* MemorizeViewModelEmoji.swift */; };
 		7A68C3B1265C6E34000B4071 /* MemorizeViewModelEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68C3AF265C6E34000B4071 /* MemorizeViewModelEmoji.swift */; };
+		7AA71E2B266F154400EC6069 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA71E2A266F154400EC6069 /* Cardify.swift */; };
+		7AA71E2C266F154400EC6069 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA71E2A266F154400EC6069 /* Cardify.swift */; };
 		7AAB4390266DDC470030CF38 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB438F266DDC470030CF38 /* AspectVGrid.swift */; };
 		7AAB4391266DDC470030CF38 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB438F266DDC470030CF38 /* AspectVGrid.swift */; };
 		7AAB4393266DE6830030CF38 /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB4392266DE6830030CF38 /* PieView.swift */; };
@@ -39,6 +41,7 @@
 		7A52DB8D265352250031A4CF /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7A68C3AC265C6C11000B4071 /* MemorizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeModel.swift; sourceTree = "<group>"; };
 		7A68C3AF265C6E34000B4071 /* MemorizeViewModelEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeViewModelEmoji.swift; sourceTree = "<group>"; };
+		7AA71E2A266F154400EC6069 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		7AAB438F266DDC470030CF38 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		7AAB4392266DE6830030CF38 /* PieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieView.swift; sourceTree = "<group>"; };
 		7AE6ABEF266C6DB800D9D48E /* Array+LoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+LoneItem.swift"; sourceTree = "<group>"; };
@@ -75,12 +78,13 @@
 		7A52DB7A265352240031A4CF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7A52DB7D265352250031A4CF /* Assets.xcassets */,
 				7A52DB7B265352240031A4CF /* MemorizeApp.swift */,
+				7A52DB7D265352250031A4CF /* Assets.xcassets */,
+				7AE6ABF2266C6E1300D9D48E /* Extension */,
 				7A68C3B2265C8D06000B4071 /* Model */,
 				7A68C3B3265C8D13000B4071 /* View */,
 				7A68C3B4265C8D2A000B4071 /* ViewModel */,
-				7AE6ABF2266C6E1300D9D48E /* Extension */,
+				7AA71E29266F152B00EC6069 /* ViewModifier */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -136,6 +140,14 @@
 				7A68C3AF265C6E34000B4071 /* MemorizeViewModelEmoji.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AA71E29266F152B00EC6069 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				7AA71E2A266F154400EC6069 /* Cardify.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		7AE6ABF2266C6E1300D9D48E /* Extension */ = {
@@ -246,6 +258,7 @@
 				7A52DB90265352250031A4CF /* MemorizeGameView.swift in Sources */,
 				7AAB4393266DE6830030CF38 /* PieView.swift in Sources */,
 				7AAB4390266DDC470030CF38 /* AspectVGrid.swift in Sources */,
+				7AA71E2B266F154400EC6069 /* Cardify.swift in Sources */,
 				7A388D2C265A21A1008ABBC5 /* CardView.swift in Sources */,
 				7A52DB8E265352250031A4CF /* MemorizeApp.swift in Sources */,
 				7A68C3B0265C6E34000B4071 /* MemorizeViewModelEmoji.swift in Sources */,
@@ -261,6 +274,7 @@
 				7A52DB91265352250031A4CF /* MemorizeGameView.swift in Sources */,
 				7AAB4394266DE6830030CF38 /* PieView.swift in Sources */,
 				7AAB4391266DDC470030CF38 /* AspectVGrid.swift in Sources */,
+				7AA71E2C266F154400EC6069 /* Cardify.swift in Sources */,
 				7A388D2D265A21A1008ABBC5 /* CardView.swift in Sources */,
 				7A52DB8F265352250031A4CF /* MemorizeApp.swift in Sources */,
 				7A68C3B1265C6E34000B4071 /* MemorizeViewModelEmoji.swift in Sources */,
